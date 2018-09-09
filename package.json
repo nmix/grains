@@ -1,0 +1,8 @@
+{
+  "name": "blank",
+  "private": true,
+  "dependencies": {},
+  "devDependencies": {
+    "@fortawesome/fontawesome-free": "^5.3.1"
+  }
+}

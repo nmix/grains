@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Blank</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <%= link_to destroy_user_session_path, method: :delete do %>
+      <%= t('sign-out') %>
+    <% end %>
+    <%= render '/layouts/application/alert' %>
+    <%= yield %>
+    <hr>
+    <p>Application Layout</p>
+  </body>
+</html>

@@ -1,0 +1,21 @@
+AllCops:
+  Exclude:
+    - 'bin/*'
+    - 'Capfile'
+    - 'config/**/*'
+    - 'db/**/*'
+    - 'spec/**/*'
+    - 'tmp/**/*'
+    - 'vendor/**/*'
+
+Bundler/OrderedGems:
+  Enabled: false
+
+Metrics/BlockLength:
+  Max: 50
+
+Style/Documentation:
+  Enabled: false
+
+Style/FrozenStringLiteralComment:
+  Enabled: false

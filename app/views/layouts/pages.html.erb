@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <%= content_tag :title, 'Blank' %>
+    <%= csrf_meta_tags %>
+    <meta charset="utf-8">
+    <meta name="viewport" 
+      content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <%= stylesheet_link_tag 'pages', media: 'all',
+      'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'pages', 
+      'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body class="pages">
+    <% unless user_signed_in? %>
+      <%= link_to t('sign-in'), new_user_session_path %>
+    <% else %>
+      <%= link_to t('dashboard'), dashboard_path %>
+    <% end %>
+    <%= render '/layouts/pages/alert' %>
+    <%= yield %>
+    <hr>
+    <p>Pages Layout</p>
+  </body>
+</html>
