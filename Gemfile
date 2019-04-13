@@ -63,7 +63,7 @@ group :test do
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
+gem 'tzinfo-data' #, platforms: %i[mingw mswin x64_mingw jruby]
 
 # ---
 
@@ -84,10 +84,10 @@ group :development, :test do
   gem 'rubocop', require: false
 end
 
-gem 'activeadmin', '~> 1.3', '>= 1.3.1'
-gem 'devise', '~> 4.5'
-gem 'devise-i18n', '~> 1.6', '>= 1.6.4'
-gem 'faker', '~> 1.9', '>= 1.9.1'
+gem 'activeadmin', '~> 1.4', '>= 1.4.3'
+gem 'devise', '~> 4.6', '>= 4.6.2'
+gem 'devise-i18n', '~> 1.8'
+gem 'faker', '~> 1.9', '>= 1.9.3'
 gem 'interactor', '~> 3.1', '>= 3.1.1'
-gem 'pg', '~> 1.1', '>= 1.1.2'
-gem 'pry-rails', '~> 0.3.6'
+gem 'pg', '~> 1.1', '>= 1.1.4'
+gem 'pry-rails', '~> 0.3.9'
