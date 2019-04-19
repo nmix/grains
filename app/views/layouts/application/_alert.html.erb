@@ -1,8 +1,8 @@
 <% if notice %>
-  <%= content_tag :div, notice %>
+  <%= content_tag :div, notice, class: 'alert alert-success', role: 'alert' %>
 <% end %>
 
 <% if alert %>
-  <%= content_tag :div, alert %>
+  <%= content_tag :div, alert, class: 'alert alert-error', role: 'alert' %>
 <% end %>
 

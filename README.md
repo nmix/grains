@@ -32,14 +32,16 @@ Rails 5.2.1
 mkdir my-pro
 # клонируем заготовку
 git clone ...
-# обновляем окружение
-bundle update
-yarn upgrade
+# устанавливаем окружение
+cd grains
+bundle
+yarn
 # создаем БД (postgresql)
 cp config/database.yml.example config/database.yml
 # корректируем config/database.yml
 bin/rails db:create
 bin/rails db:schema:load
+bin/rails db:seed
 # запускаем сервер Rails
 bin/rails s
 
@@ -63,6 +65,23 @@ git push -u origin master
 cap staging setup:upload_conf
 # запускаем развертывание
 ```
+
+## Modular Admin
+
+В ветке *modular* в проект интегрирован [Modular Admin](https://github.com/modularcode/modular-admin-html). Перерисованы представления devise и application.
+```bash
+git checkout modular
+bin/rails s
+```
+Для получения исходного кода админки с набором шаблонов можно использовать `git submodule`
+
+```bash
+git submodule update --remote
+cd vendor/modular-admin
+yarn
+yarn build
+```
+В директории /vendor/submodule-admin/dist/ сгенерируются файлы шаблона: http, js, css
 
 
 ## Тестирование

@@ -1,0 +1,61 @@
+<div class="auth-content">
+    <p class="text-center lead">Настройки профиля</p>
+
+    <%= render '/devise/shared/error_messages' %>
+
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+
+      <div class="form-group">
+        <%= f.text_field :first_name, class: 'form-control form-control-lg underlined', 
+          placeholder: 'Имя' %>
+      </div>
+
+      <div class="form-group">
+        <%= f.text_field :last_name, class: 'form-control form-control-lg underlined', 
+          placeholder: 'Фамилия' %>
+      </div>
+
+      <div class="form-group">
+        <%= f.email_field :email, class: 'form-control form-control-lg underlined', 
+          placeholder: 'Email' %>
+      </div>
+
+      <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+        <div class="alert alert-warning">Ожидается подтверждение от: <%= resource.unconfirmed_email %></div>
+      <% end %>
+
+
+      <div class="form-group">
+        <%= f.password_field :current_password, autocomplete: "off", 
+          class: 'form-control form-control-lg underlined', placeholder: 'Текущий пароль'  %>
+        <p class="form-text color-primary">
+          <small>Необходимо ввести текущий пароль</small>
+        </p>
+      </div>
+
+      <div class="form-group">
+        <%= f.password_field :password, autocomplete: "off", 
+          class: 'form-control form-control-lg underlined', placeholder: 'Новый пароль'  %>
+        <p class="form-text color-primary">
+          <small>Оставьте пустым, если не хотите изменить</small>
+        </p>
+      </div>
+
+      <div class="form-group">
+        <%= f.password_field :password_confirmation, autocomplete: "off", 
+          class: 'form-control form-control-lg underlined', placeholder: 'Подтверждение пароля'  %>
+      </div>
+
+      <div class="form-group">
+        <%= f.submit "Сохранить изменения",
+          class: 'btn btn-primary btn-lg btn-block' %>
+      </div>
+    <% end %>
+</div>
+
+<div class="text-center mb-3">
+    <%= link_to dashboard_path, class: "btn btn-secondary btn-sm" do %>
+        <i class="fas fa-arrow-left"></i>
+        Вернуться на главную
+    <% end %>
+</div>

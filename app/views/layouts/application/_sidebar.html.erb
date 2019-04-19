@@ -1,0 +1,39 @@
+<aside class="sidebar">
+    <div class="sidebar-container">
+        <div class="sidebar-header">
+            <div class="brand">
+                <div class="logo">
+                    <span class="l l1"></span>
+                    <span class="l l2"></span>
+                    <span class="l l3"></span>
+                    <span class="l l4"></span>
+                    <span class="l l5"></span>
+                </div> Modular Admin
+            </div>
+        </div>
+        <nav class="menu">
+            <ul class="sidebar-menu metismenu" id="sidebar-menu">
+                <li class="active">
+                    <%= link_to dashboard_path do %>
+                        <i class="fa fa-home"></i>
+                        Главная
+                    <% end %>
+                </li>
+                <li>
+                    <a href="">
+                        <i class="fa fa-th-large"></i> Items Manager <i class="fa arrow"></i>
+                    </a>
+                    <ul class="sidebar-nav">
+                        <li>
+                            <a href="#"> Items List </a>
+                        </li>
+                        <li>
+                            <a href="#"> Item Editor </a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</aside>
+

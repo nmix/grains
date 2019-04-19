@@ -1,21 +1,28 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Blank</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
+    <head>
+        <%= content_tag :title, content_for?(:title) ? yield(:title) : "Grains" %>
+        <%= csrf_meta_tags %>
+        <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+        <%= favicon_link_tag 'favicon.png' %>
 
-  <body>
-    <%= link_to destroy_user_session_path, method: :delete do %>
-      <%= t('sign-out') %>
-    <% end %>
-    <%= render '/layouts/application/alert' %>
-    <%= yield %>
-    <hr>
-    <p>Application Layout</p>
-  </body>
+        <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+        <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    </head>
+
+    <body>
+        <div class="main-wrapper">
+            <div class="app" id="app">
+                <%= render '/layouts/application/header' %>
+                <%= render '/layouts/application/sidebar' %>
+                <div class="sidebar-overlay" id="sidebar-overlay"></div>
+                <div class="sidebar-mobile-menu-handle" id="sidebar-mobile-menu-handle"></div>
+                <div class="mobile-menu-handle"></div>
+                <%= yield %>
+            </div>
+        </div>
+        <%= javascript_include_tag 'modular-admin/vendor.js' %>
+        <%= javascript_include_tag 'modular-admin/app.js' %>
+    </body>
 </html>

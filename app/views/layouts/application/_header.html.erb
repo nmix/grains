@@ -1,0 +1,83 @@
+<header class="header">
+    <div class="header-block header-block-collapse d-lg-none d-xl-none">
+        <button class="collapse-btn" id="sidebar-collapse-btn">
+            <i class="fa fa-bars"></i>
+        </button>
+    </div>
+    <div class="header-block header-block-search">
+        <form role="search">
+            <div class="input-container">
+                <i class="fa fa-search"></i>
+                <input type="search" placeholder="Search">
+                <div class="underline"></div>
+            </div>
+        </form>
+    </div>
+
+    <div class="header-block header-block-nav">
+        <ul class="nav-profile">
+            <li class="notifications new">
+                <a href="" data-toggle="dropdown">
+                    <i class="fa fa-bell-o"></i>
+                    <sup>
+                        <span class="counter">8</span>
+                    </sup>
+                </a>
+                <div class="dropdown-menu notifications-dropdown-menu">
+                    <ul class="notifications-container">
+                        <li>
+                            <a href="" class="notification-item">
+                                <div class="img-col">
+                                    <%= image_tag 'avatar-placeholder.png', size: 34 %>
+                                </div>
+                                <div class="body-col">
+                                    <p>
+                                        <span class="accent">Zack Alien</span> pushed new commit: <span class="accent">Fix page load performance issue</span>. </p>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="" class="notification-item">
+                                <div class="img-col">
+                                    <%= image_tag 'avatar-placeholder.png', size: 34 %>
+                                </div>
+                                <div class="body-col">
+                                    <p>
+                                        <span class="accent">Zack Alien</span> pushed new commit: <span class="accent">Fix page load performance issue</span>. </p>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                    <footer>
+                        <ul>
+                            <li>
+                                <a href=""> View All </a>
+                            </li>
+                        </ul>
+                    </footer>
+                </div>
+            </li>
+            <li class="profile dropdown">
+                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                    <%= image_tag(gravatar_url(current_user.email, 32)) %>
+                    <%= content_tag :span, current_user.email , class: 'name' %>
+                </a>
+                <div class="dropdown-menu profile-dropdown-menu" aria-labelledby="dropdownMenu1">
+                    <%= link_to edit_user_registration_path, class: "dropdown-item" do %>
+                        <i class="fas fa-user icon"></i>
+                        Профиль
+                    <% end %>
+                    <a class="dropdown-item" href="#">
+                        <i class="fa fa-bell icon"></i> Notifications </a>
+                    <a class="dropdown-item" href="#">
+                        <i class="fa fa-gear icon"></i> Settings </a>
+                    <div class="dropdown-divider"></div>
+                    <%= link_to destroy_user_session_path, method: :delete, class: "dropdown-item" do %>
+                        <i class="fas fa-power-off icon"></i>
+                        Выход
+                    <% end %>
+                </div>
+            </li>
+        </ul>
+    </div>
+</header>

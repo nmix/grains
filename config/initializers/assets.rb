@@ -15,4 +15,5 @@ Rails.application.config.assets.paths << Rails.root.join('node_modules')
 
 Rails.application.config.assets.precompile += %w( pages.scss )
 
-Rails.application.config.assets.precompile += %w( pages.js )
+Rails.application.config.assets.precompile +=
+  %w( pages.js modular-admin/vendor.js modular-admin/app.js )

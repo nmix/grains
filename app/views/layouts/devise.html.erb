@@ -1,25 +1,42 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <%= content_tag :title, 'Blank' %>
-    <%= csrf_meta_tags %>
-    <meta charset="utf-8">
-    <meta name="viewport" 
-      content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <head>
+        <%= content_tag :title, content_for?(:title) ? yield(:title) : "Grains" %>
+        <%= csrf_meta_tags %>
+        <meta charset="utf-8">
+        <meta name="viewport" 
+          content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="">
+        <meta name="author" content="">
 
-    <%= stylesheet_link_tag 'pages', media: 'all',
-      'data-turbolinks-track': 'application' %>
-    <%= javascript_include_tag 'pages',
-      'data-turbolinks-track': 'application' %>
-  </head>
+        <%= favicon_link_tag 'favicon.png' %>
 
-  <body class="devise">
-    <%= link_to t('home'), root_path %>
-    <%= render '/layouts/devise/alert' %>
-    <%= yield %>
-    <hr>
-    <p>Devise Layout</p>
-  </body>
+        <%= stylesheet_link_tag 'application', media: 'all',
+          'data-turbolinks-track': 'reload' %>
+        <%= javascript_include_tag 'application',
+          'data-turbolinks-track': 'reload' %>
+    </head>
+
+    <body class="devise">
+        <div class="auth">
+            <div class="auth-container">
+                <div class="card">
+                    <header class="auth-header">
+                        <h1 class="auth-title">
+                            <div class="logo">
+                                <span class="l l1"></span>
+                                <span class="l l2"></span>
+                                <span class="l l3"></span>
+                                <span class="l l4"></span>
+                                <span class="l l5"></span>
+                            </div> ModularAdmin
+                        </h1>
+                    </header>
+                    <%= yield %>
+                </div>
+            </div>
+        </div>
+        <%= javascript_include_tag 'modular-admin/vendor.js' %>
+        <%= javascript_include_tag 'modular-admin/app.js' %>
+    </body>
 </html>
